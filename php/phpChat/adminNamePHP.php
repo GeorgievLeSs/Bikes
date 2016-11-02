@@ -12,14 +12,14 @@
 //$servername = "localhost";
 //$username = "onlinechat";
 //$password = "fB8*f3s2";
-$dbname = "chat";
+$dbname = "bikesdb";
         try {
 //    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn = new PDO("mysql:dbname=$dbname");
     
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $stmt = $conn->prepare("UPDATE onlineChat SET adminName = :adminNames WHERE chatID = '$chatID'");
+    $stmt = $conn->prepare("UPDATE liveDB SET Admin_ID = :adminNames WHERE Chat_ID = '$chatID'");
     $stmt->bindParam(':adminNames', $adminNames);
     $stmt->execute();
     }

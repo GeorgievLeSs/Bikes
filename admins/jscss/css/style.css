@@ -1,0 +1,510 @@
+@font-face {
+    font-family: merriweather;
+    src: url(fonts/merriweather/Merriweather-Light.ttf);
+    font-size: 22px;
+}
+.domain::before {
+  content: "\0040";    /* Unicode character for @ symbol */
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    color: #ffffff;
+    font-family: merriweather;
+    background: url(../images/body-bg.jpg) center 0 repeat #1c1c1c;
+}
+section {
+    padding: 10px;
+}
+    .container {
+        background: url(../images/bg.jpg) center 0 repeat-y;
+    }
+        a,
+        a:visited,
+        a:active {
+            color: #33d8ea;
+        }
+        a:hover {
+            text-decoration: none;
+            color: #ffffff;
+        }
+    .textAlignCenter {
+        text-align: center;
+    }
+    .navbar-nav>li>a.activeA {
+      color: cyan;
+      pointer-events: none;
+      box-shadow: 4px 4px 3px #E31C8C, -4px -4px 3px #E31C8C;
+    }
+label {
+    display: block;
+}
+    form label .form-control {
+        border: 1px solid gold;
+        padding: 10px;
+        height: 40px;
+        line-height: 34px;
+    }
+    /*.picker--opened .picker__holder {
+        overflow: hidden;
+        width: 260px;
+    }*/
+    .help-block {
+        color: lime;
+        font-weight: 700;
+        position: absolute;
+        top: 23px;
+        left: 30px;
+        padding: 2px;
+        background: blueviolet;
+    }
+    .paddignBottom {
+    padding-bottom: 15px;
+}
+.styleButton {
+    border: none;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: cadetblue;
+    padding: 8px;
+}
+/*.textPopoverColorBlack {
+    color: black;
+}
+iframe.scrolloff{
+    pointer-events: none;
+}*/
+
+.navBG {
+    background:url(../images/header.jpg) 0 bottom repeat-x;
+    height: 98px;
+}
+.menu {
+    clear: both;
+}
+
+ul.social.menu li a {
+    padding: 5px;
+}
+ul.menu li a.home {background:url(../images/home.jpg) 0 0 no-repeat;width:61px; height:60px; display:block; padding:0 !important;}
+ul.menu li a { font:16px/20px Tahoma, Geneva, sans-serif; padding:19px 22px 21px 22px; margin: 2px 5px; overflow:hidden; box-shadow: -3px 3px 3px #E31C8C, 3px -3px 3px #E31C8C; }
+ul.menu li:hover, ul.menu li.current {}
+ul.menu li:hover a.home, ul.menu li.current a.home {background-position:right 0;}
+ul.menu li:hover a.home img, ul.menu li.current a.home img {color:#0fc6ee; text-shadow:#68dcf6 0 0 5px; background: none;}
+ul.menu li a:hover , ul.menu li.current a {color:#0fc6ee; text-shadow:#68dcf6 0 0 5px; background: none; box-shadow: 4px 4px 3px #E31C8C, -4px -4px 3px #E31C8C;}
+#navigation {
+    background: darkgray;
+    height: 136px;
+}
+        .navbar-brand img {
+            height: 60px;
+            width: 150px;
+            margin-top: 21px;
+            margin-left: 6px;
+        }
+        .navbar-toggle span {
+            border: none;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: cadetblue;
+            padding: 5px;
+        }
+        .collapse.in {
+            position: absolute;
+            z-index: 1;
+            width: 80%;
+            right: 10%;
+            top: 88px;
+            padding: 14px 5px;
+            text-align: center;
+            background: rgb(30,50,50);
+        }
+#top {
+    background-image: url(../images/charger.png);
+    background-size: contain;
+}
+    /*div#firstForm {
+        text-shadow: 0px 0px 4px aqua, 0px 0px 20px #000000;
+        background-color: rgba(0,0,0,0.5);
+        padding: 10px;
+    }
+.owl-carousel.owl-loaded {
+    padding: 10px;
+}
+    #mainPoints .owl-nav .owl-next {
+        margin-right: -22px;
+    }
+    #mainPoints .owl-nav .owl-prev {
+        margin-left: -22px;
+    }
+    .sizeIMG {
+        width: 350px;
+        height: 200px;
+    }
+    #mainPoints div.pointsExtraText{
+        position: relative;
+    }
+        .pointsExtraText b {
+            color: #33d8ea;
+            font-style: italic;
+            cursor: pointer;
+        }
+        #mainPoints div.pointsExtraText span {
+            color: #4f0214;
+            background: #f5f5f5;
+            border: 1px solid #4f0214;
+            padding: 15px;
+            box-shadow: 0px 0px 3px #7099FF;
+            position: absolute;
+            top: 10px;
+            display: block;
+            z-index: 10000;
+        }
+.feedbacks i {
+    color: goldenrod;
+}
+p.moreInfo {
+    text-align: center;
+    box-shadow: 2px 1px 5px #dc3dc3, -2px -1px 5px #dc3dc3;
+    font-size: 22px;
+    padding: 10px;
+}
+p.moreInfo a {
+    padding: 20px;
+}
+    p.moreInfo a:hover {
+        text-shadow: 2px 1px 5px #732666, 0px 2px 5px #002E94;
+    }
+.faqShow {
+    display: none;
+}
+#occupations .container {
+    padding: 15px;
+}
+#partners img {
+    width: 10%;
+    height: 50px;
+    margin-bottom: 10px;
+}
+#appMobile nav {
+    background: url(../images/header.jpg) 0 repeat;
+}
+#appMobile img {
+    margin: 10px;
+    padding: 5px;
+}
+    #appMobile a:hover img {
+        box-shadow: 0px 0px 10px rgb(100, 100, 200);
+    }
+#linkQuote .container {
+    padding-bottom: 10px;
+}
+    #linkQuote h3 {
+        font-size: 36px;
+    }
+    #linkQuote span {
+        line-height: 110px;
+    }
+        #linkQuote a {
+            padding: 12px;
+            background: #4f0214;
+            text-transform: uppercase;
+            font-size: 24px;
+            border-radius: 0px 30px 0px 30px;
+            box-shadow: 0px 0px 5px #ffffff;
+        }
+        #linkQuote a:hover {
+            box-shadow: 0px 0px 3px #000000;
+
+        }
+#quote form {
+    padding-bottom: 15px;
+}*/
+footer>div.container {
+    background: url(../images/background/carbon.jpg) center 0 repeat #1c1c1c;
+}
+    footer ul {
+        list-style-type: none;
+        display: inline-block;
+        padding: 0px;
+    }
+    .topInFooter li {
+        display: inline-block;
+        margin: 5px 3px;
+        background: url(../images/header.jpg) 0 repeat;
+    }
+        .topInFooter a {
+            padding: 8px;
+            margin: 5px;
+            width: 162px;
+            background: #808080;
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px #f5f5f5;
+        }
+    .goTop a:hover,
+    .downInFooter li:hover,
+    .topInFooter a:hover {
+        box-shadow: 0px 0px 3px #000000;
+    }
+    div.middleInFooter {
+        background: rgba(114, 110, 170,0.7);
+        box-shadow: 0px 0px 20px #0000A0;
+    }
+        div.middleInFooter li {
+            margin: 5px 0px;
+        }
+        div.footerWorkTime li {
+            border-bottom: 2px solid #0000A0;
+            border-radius: 10px;
+            padding: 5px;
+            border-top: 2px solid #0000A0;
+        }
+    div.goTop a {
+        border: 4px solid #0000A0;
+        border-radius: 100%;
+        padding: 10px;
+    }
+    .downInFooter nav {
+        margin-top: 15px;
+        float: right;
+    }
+    .downInFooter nav ul {
+        margin-right: 0px;
+    }
+div.pricingInner {
+    display: inline-block;
+    float: left;
+    width: 30%;
+    margin-left: 2%;
+}
+    #thankYou ul {
+        list-style-type: none;
+        padding: 0px;
+    }
+    #thankYou li {
+        padding: 10px;
+    }
+    #thankYou li.colorFirst,
+    .services .pricing  .primary-button  a.colorFirst {
+        background-color: #0E6BAD;
+    }
+    #thankYou li.colorSecond,
+    .services .pricing .primary-button   a.colorSecond {
+        background-color: #cf5402;
+    }
+    #thankYou li.colorThird,
+    .services .pricing .primary-button   a.colorThird {
+        background-color: rgba(65, 186, 255, 1);
+    }
+    #thankYou li h3 {
+        color: #fff;
+        margin: 0px;
+    }
+    #thankYou .pricing li a {
+        padding: 10px;
+        color: rgb(119, 205, 208);
+        font-weight: 700;
+        box-shadow: 0px 0px 3px #ffffff;
+    }
+    #thankYou .pricingInner li {
+        box-shadow: 0px 0px 3px #ffffff;
+    }
+    #thankYou li.list-group-item {
+        text-align: center;
+        color: #000000;
+    }
+    #thankYou  hr {
+        border-top: 2px solid #000;
+        margin: 50px 0px;
+    }
+    #thankYou  h4 {
+        margin: 50px 0px;
+        font-size: 26px;
+    }
+    #thankYou .colorFirst:hover li,
+    #thankYou .colorFirst:hover h5{
+        background-color: #0E6BAD;
+        color: #fff;
+    }
+    #thankYou .colorFirst:hover  li.colorFirst,
+    #thankYou .colorFirst:hover  h3,
+    #thankYou .colorFirst:hover  a.colorFirst{
+        background-color: #fff;
+        color: #0E6BAD;
+    }
+    #thankYou .colorSecond:hover li,
+    #thankYou .colorSecond:hover h5{
+        background-color: #cf5402;
+        color: #fff;
+    }
+    #thankYou .colorSecond:hover  li.colorSecond,
+    #thankYou .colorSecond:hover  h3,
+    #thankYou .colorSecond:hover  a.colorSecond{
+        background-color: #fff;
+        color: #cf5402;
+    }
+    #thankYou .colorThird:hover li,
+    #thankYou .colorThird:hover h5{
+        background-color: rgba(65, 186, 255, 1);
+        color: #fff;
+    }
+    #thankYou .colorThird:hover  li.colorThird,
+    #thankYou .colorThird:hover  h3,
+    #thankYou .colorThird:hover  a.colorThird{
+        background-color: #fff;
+        color: rgba(65, 186, 255, 1);
+    }
+#quote .dontShow {
+    display: none;
+}
+#about img {
+    width: 350px;
+    height: 200px;
+}
+    img.aboutTop {
+        margin-right: 15px;
+    }
+    img.aboutDown {
+        margin-left: 15px;
+    }
+#contacts h2 {
+    text-align: center;
+}
+#contacts textarea {
+    height: 150px;
+    margin: 10px 0px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 991px) {
+
+}
+@media screen and (max-width: 768px) {
+    #navigation {
+        height: 84px;
+    }
+        #navigation .container {
+            padding-bottom: 20px;
+        }
+            .navBG {
+                height: 76px;
+            }
+            .navbar-toggle {
+                margin-top: 21px;
+            }
+            .navbar-brand img {
+                margin-top: -1px;
+            }
+            .navbar,
+            .navbar-right {
+                margin: -5px;
+            }
+            #navigation li {
+                display: inline-block;
+            }
+    div.downInFooter li {
+        display: inline-block;
+        margin: 15px 5px 5px;
+    }
+#partners img {
+    width: 20%;
+}
+}
+@media screen and (min-width: 0px) and (max-width: 650px) {
+
+}
+@media screen and (min-width: 0px) and (max-width: 400px) {
+
+}
+
+#userChat {
+    position: fixed;
+    left: 10px;
+    bottom: -270px;
+    height: 270px;
+    width: 270px;
+    background: rgb(100, 200, 220);
+
+    -webkit-transition: bottom 2s; /* Safari */
+    transition: bottom 2s;
+}
+    #inChatForm {
+        position: absolute;
+        z-index: 1;
+        background: rgb(100, 200, 255);
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        left: 0px;
+        bottom: 0px;
+    }
+        #btnChatFormUser {
+            margin: 0px 65px;
+            width: 100px;
+        }
+        .chatArea,
+        #chatArea,
+        #typeMsg textarea{
+            color: rgb(255, 255, 255);
+            height: 200px;
+            overflow-x: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgb(255, 100, 100);
+            margin: 5px;
+        }
+        #typeMsg input {
+            display: none;
+        }
+        #sendMessageArea p {
+            float: left;
+            line-height: 54px;
+            padding: 5px;
+        }
+        #typeMsg textarea{
+            line-height: 30px;
+            height: 40px;
+            font-size: 20px;
+            width: 90%;
+            margin: 5%;
+            border-radius: 10px;
+            right: 0px;
+            bottom: 0px;
+            position: absolute;
+        }
+
+
+        #admin {
+            position: relative;
+            z-index: 5;
+            min-height: 700px;;
+            text-align: center;
+            background: rgb(255, 255, 255);
+        }
+        .separateBox {
+            background: rgb(200, 100, 50);
+            height: 350px;
+        }
+
+            #admin .separateBox textarea {
+                  line-height: 30px;
+                  width: 90%;
+                  margin: 5%;
+                  border-radius: 10px;
+                  right: 0px;
+                  bottom: 5px;
+                  position: absolute;
+            }
+
+    .separateBox .formAdmin {
+        position: absolute;
+        width: 100%;
+        line-height: 66px;
+        font-weight: 700;
+        font-size: 20px;
+        background: rgba(100, 200, 100, 0.5);
+        padding: 20px;
+        left: 0px;
+        top: 0px;
+        z-index: 10;
+    }

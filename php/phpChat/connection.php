@@ -1,92 +1,101 @@
 <?php
- 
+
 header('Content-type:application/json');
 
 
     $chatID = $_POST['chatID'];
-    
+
     $lastMsg = $_POST['userMsg'];
     $userSend = $_POST['userSend'];
-    
-    $checkNewMsgID = $_GET['chatID'];
-    $rainbowAdmin = $_GET['rainbowAdmin'];
+
+        // $checkNewMsgID = $_POST['chatID'];
+        // $rainbowAdmin = $_GET['rainbowAdmin'];
 
 //$servername = "localhost";
 //$username = "onlinechat";
 //$password = "fB8*f3s2";
-$dbname = "chat";
+$dbname = "bikesdb";
+
+$servername = "localhost";
+//$servername = "127.0.0.1";
+$username = "LeSs";
+$password = "362159847159847zsewaq";
 
 try {
 //    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn = new PDO("mysql:dbname=$dbname");
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+//    $conn = new PDO("mysql:dbname=$dbname");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     ////
-    $oldData = $conn->prepare("SELECT chat_Text FROM onlineChat WHERE chatID =  '$chatID' OR chatID =  '$checkNewMsgID'");
-    
+
+    $oldData = $conn->prepare("SELECT Chat_Text FROM liveDB WHERE Chat_ID =  '$chatID'");
+
     $oldData->execute();
-             $clearOldData = $oldData->fetchColumn();  
+             $clearOldData = $oldData->fetchColumn();
                      $oldMsgDB = trim(preg_replace('/\s+/', ' ', $clearOldData));
-                     
-    $userNames = $conn->prepare("SELECT user_names FROM onlineChat WHERE chatID =  '$chatID'  OR chatID =  '$checkNewMsgID'");
-    
+
+    $userNames = $conn->prepare("SELECT User_Names FROM liveDB WHERE Chat_ID =  '$chatID'");
+
     $userNames->execute();
-//    
-             $clearText = $userNames->fetchColumn();  
+//
+             $clearText = $userNames->fetchColumn();
                      $newUserNames = trim(preg_replace('/-/', ' ', $clearText));
-                    
-                      
+
+
                       $chat_text = $oldMsgDB . '<br/>' . $newUserNames . ': ' . $lastMsg;
-                      
-    $stmt = $conn->prepare("UPDATE onlineChat SET chat_Text = :chat_text WHERE chatID = '$chatID'");
+
+    $stmt = $conn->prepare("UPDATE liveDB SET Chat_Text = :chat_text WHERE Chat_ID = '$chatID'");
     $stmt->bindParam(':chat_text', $chat_text);
     $stmt->execute();
-    $stmt = $conn->prepare("UPDATE onlineChat SET userSend = :userSend WHERE chatID = '$chatID'");
+    $stmt = $conn->prepare("UPDATE liveDB SET Sender = :userSend WHERE Chat_ID = '$chatID'");
     $stmt->bindParam(':userSend', $userSend);
     $stmt->execute();
     ////
-    $newSend = $conn->prepare("SELECT userSend FROM onlineChat WHERE chatID =  '$checkNewMsgID'");
-    
+    $newSend = $conn->prepare("SELECT Sender FROM liveDB WHERE Chat_ID =  '$chatID'");
+
     $newSend->execute();
-             $lumr = $newSend->fetchColumn();  
+             $lumr = $newSend->fetchColumn();
                      $lastSend = trim(preg_replace('/\s+/', ' ', $lumr));
-                     
-    $state = $conn->prepare("SELECT state FROM onlineChat WHERE chatID =  '$chatID'  OR chatID =  '$checkNewMsgID'");
-    
-    $state->execute();
-             $newState = $state->fetchColumn();  
-             
-             
-        $catchAllOpenState = $conn->prepare("SELECT * FROM  onlineChat WHERE state='open'");
-        $catchAllOpenState->execute();
-        $checkEachOne = $catchAllOpenState->fetchAll();
-        
-        foreach($checkEachOne as $row){
-            
-            $checkUserTime = $row['reg_date'];
-            
-            $eachTimeStamp = strtotime($row['reg_date']);
-            $setCloseForOld = strtotime("-3 minutes");
+    //
+    // $oldState = $conn->prepare("SELECT State FROM liveDB WHERE Chat_ID =  '$chatID'  OR Chat_ID =  '$checkNewMsgID'");
+    //
+    // $oldState->execute();
+    //          $newState = $oldState->fetchColumn();
+    //
+    //     $catchAllOpenState = $conn->prepare("SELECT * FROM  liveDB WHERE State = 'open'");
+    //     $catchAllOpenState->execute();
+    //     $checkEachOne = $catchAllOpenState->fetchAll();
+    //
+    //     foreach($checkEachOne as $row){
+    //
+    //         $checkUserTime = $row['Date'];
+    //
+    //         $eachTimeStamp = strtotime($row['Date']);
+    //         $setCloseForOld = strtotime("-3 minutes");
+    //
+    //         if ($eachTimeStamp <= $setCloseForOld) {
+    //
+    //             $closeChatByTime = $conn->prepare("UPDATE liveDB SET State = 'close' WHERE State = 'open' AND Date = '$checkUserTime'");
+    //             $closeChatByTime->execute();
+    //         }
+    //     }
 
-            if ($eachTimeStamp <= $setCloseForOld) {
-
-                $closeChatByTime = $conn->prepare("UPDATE onlineChat SET state = 'close' WHERE state = 'open' AND reg_date = '$checkUserTime'");
-                $closeChatByTime->execute();
-            }
-        }
-    
 $data['newMsg'] = $chat_text;
 
-$data['state'] = $newState;
-                     
+// $data['State'] = $newState;
+
 $data['oldMsg'] = $oldMsgDB;
+// $data['oldMsg'] = "WORK";
+// $data['userSend'] = $lastSend;
 $data['userSend'] = $lastSend;
 
     }
 catch(PDOException $e)
     {
-    //echo "Connection failed: " . $e->getMessage();
+    echo "Connection failed: " . $e->getMessage() . " Really BAAAaaaAAAddddDDD!!! ";
     }
 
 echo json_encode($data);
+// echo "It`s not empty: " . $oldMsgDB;
 
 ?>

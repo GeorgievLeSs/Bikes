@@ -1,0 +1,74 @@
+<redirect date='2016-06-02 10:46:47'>
+Array
+(
+    [0] => Array
+        (
+            [Salutation] => Dr
+            [FirstName] => Test
+            [Surname] => Test
+            [DateOfBirth] => 01/06/1998
+            [EmailAddress] => test@test.test
+            [Telephone] => 07777777777
+            [MaritalStatus] => Separated
+            [LicenceType] => Full
+            [PostalCode] => N64AA
+            [Street] => test
+            [TownCity] => test
+            [County] => Aberdare
+            [HouseNo] => test
+            [ResidentialStatus] => HomeOwner
+            [MonthsSinceLivingHere] => 2
+            [YearsSinceLivingHere] => 1
+            [PostalCode1] => N64AA
+            [Street1] => N64AA
+            [TownCity1] => N64AA
+            [County1] => Aberdovey
+            [HouseNo1] => N64AA
+            [ResidentialStatus1] => HomeOwner
+            [MonthsSinceLivingHere1] => 6
+            [YearsSinceLivingHere1] => 1
+            [PostalCode2] => N64AA
+            [Street2] => N64AA
+            [TownCity2] => N64AA
+            [County2] => Aberdare
+            [HouseNo2] => N64AA
+            [ResidentialStatus2] => HomeOwner
+            [MonthsSinceLivingHere2] => 1
+            [YearsSinceLivingHere2] => 4
+            [Occupation] => N64AA
+            [Employer] => N64AA
+            [EmploymentStatus] => FullTimePermanent
+            [AddressNameNumber] => N64AA
+            [Street3] => N64AA
+            [TownCity3] => N64AA
+            [PostalCode3] => N64AA
+            [County3] => Aberdare
+            [TakeHomePay] => N64AA
+            [PaymentFrequency] => Weekly
+            [MonthsWithEmployer] => 1
+            [YearsWithEmployer] => 0
+            [Occupation1] => N64AA
+            [Employer1] => N64AA
+            [EmploymentStatus1] => PartTime
+            [AddressNameNumber1] => N64AA
+            [Street4] => N64AA
+            [TownCity4] => N64AA
+            [PostalCode4] => N64AA
+            [County4] => Aberdeen
+            [TakeHomePay1] => N64AA
+            [PaymentFrequency1] => Weekly
+            [MonthsWithEmployer1] => 1
+            [YearsWithEmployer1] => 2
+            [app_name] => CarLoans_UK
+            [du] => 
+            [dp] => WEBSITE
+            [dv] => WEBSITE
+        )
+
+    [1] => 151.237.102.85
+    [2] => Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
+    [3] => /var/www/vhosts/rainbowgrp.co.uk/mobileapp/ivowd/semantic/libs/send.php
+    [4] => 2016-06-02 10:46:47
+)
+ 
+</redirect>
