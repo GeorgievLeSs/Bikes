@@ -1,6 +1,38 @@
 
 <section id="about">
     <div class="container">
+          
+        <form id="userDestinations" method="post">
+            
+            <fieldset>
+                
+                <div class="form-group col-sm-6"> 
+                    
+                    <label>Начална точка&#8273;
+                        
+                        <br/>
+                        <input type="text" name="StartingPoint" class="form-control" id="startPoint">
+                    </label>
+                </div>
+                
+                <div class="form-group col-sm-6"> 
+                    
+                    <label>Крайна точка&#8273;
+                        
+                        <br/>
+                        <input type="text" name="EndPoint" class="form-control" id="endPoint">
+                    </label>
+                </div>
+                <div class="form-group col-sm-12"> 
+                    
+                    
+                    <button type="button" id="sendDestination" class="form-control">Show</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <div id="map" class="col-sm-12"></div>
+       
         <h1>
             <i class="fa fa-file-text-o"></i> 
             Motorcycle short story.

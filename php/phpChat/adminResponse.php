@@ -9,13 +9,13 @@ header('Content-type:application/json');
 //$servername = "localhost";
 //$username = "onlinechat";
 //$password = "fB8*f3s2";
-$dbname = "chat";
+$dbname = "bikesdb";
         try {
 //    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn = new PDO("mysql:dbname=$dbname");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $oldData = $conn->prepare("SELECT chat_Text FROM onlineChat WHERE chatID =  '$chatID' OR chatID =  '$checkNewMsgID'");
+    $oldData = $conn->prepare("SELECT Chat_Text FROM liveDB WHERE Chat_ID =  '$chatID' OR Chat_ID =  '$checkNewMsgID'");
     
     $oldData->execute();
             $clearText = $oldData->fetchColumn();  
@@ -23,11 +23,11 @@ $dbname = "chat";
                      
             $chat_text = $oldText . '<br/>' . "Support Rainbow" . ': ' . $lastMsg;
                       
-    $stmt = $conn->prepare("UPDATE onlineChat SET chat_Text = :chat_text WHERE chatID = '$chatID'");
+    $stmt = $conn->prepare("UPDATE liveDB SET Chat_Text = :chat_text WHERE Chat_ID = '$chatID'");
     $stmt->bindParam(':chat_text', $chat_text);
     $stmt->execute();
     ////
-    $stmt = $conn->prepare("UPDATE onlineChat SET userSend = :userSend WHERE chatID = '$chatID'");
+    $stmt = $conn->prepare("UPDATE liveDB SET Sender = :userSend WHERE Chat_ID = '$chatID'");
     $stmt->bindParam(':userSend', $adminSend);
     $stmt->execute();
     

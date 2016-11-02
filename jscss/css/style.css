@@ -42,14 +42,14 @@ section {
     .container {
         background: url(../images/bg.jpg) center 0 repeat-y;
     }
-        a, 
-        a:visited, 
+        a,
+        a:visited,
         a:active {
-            color: #33d8ea; 
+            color: #33d8ea;
         }
         a:hover {
             text-decoration: none;
-            color: #ffffff; 
+            color: #ffffff;
         }
     #appMobile div,
     #partners h2,
@@ -60,7 +60,7 @@ section {
     }
     .navbar-nav>li>a.activeA {
       color: cyan;
-      pointer-events: none;  
+      pointer-events: none;
       box-shadow: 4px 4px 3px #E31C8C, -4px -4px 3px #E31C8C;
     }
 label {
@@ -102,7 +102,7 @@ iframe.scrolloff{
     pointer-events: none;
 }
 
-.navBG { 
+.navBG {
     background:url(../images/header.jpg) 0 bottom repeat-x;
     height: 98px;
 }
@@ -186,6 +186,9 @@ ul.menu li a:hover , ul.menu li.current a {color:#0fc6ee; text-shadow:#68dcf6 0 
             top: 10px;
             display: block;
             z-index: 10000;
+        }
+        .popover {
+          color: #000000;
         }
 .feedbacks i {
     color: goldenrod;
@@ -405,7 +408,7 @@ div.pricingInner {
 }
 
 @media screen and (min-width: 0px) and (max-width: 991px) {
-    
+
 }
 @media screen and (max-width: 768px) {
     #navigation {
@@ -423,7 +426,7 @@ div.pricingInner {
             .navbar-brand img {
                 margin-top: -1px;
             }
-            .navbar, 
+            .navbar,
             .navbar-right {
                 margin: -5px;
             }
@@ -439,10 +442,10 @@ div.pricingInner {
 }
 }
 @media screen and (min-width: 0px) and (max-width: 650px) {
-    
+
 }
 @media screen and (min-width: 0px) and (max-width: 400px) {
-    
+
 }
 
 #userChat {
@@ -451,8 +454,9 @@ div.pricingInner {
     bottom: -270px;
     height: 270px;
     width: 270px;
+    z-index: 10;
     background: rgb(100, 200, 220);
-    
+
     -webkit-transition: bottom 2s; /* Safari */
     transition: bottom 2s;
 }
@@ -489,11 +493,14 @@ div.pricingInner {
             padding: 5px;
         }
         #typeMsg textarea{
-            height: 50px;
-            width: 260px;
+            line-height: 30px;
+            height: 40px;
+            font-size: 20px;
+            width: 90%;
+            margin: 5%;
             border-radius: 10px;
             right: 0px;
-            bottom: 5px;
+            bottom: 0px;
             position: absolute;
         }
 
@@ -509,7 +516,7 @@ div.pricingInner {
             background: rgb(200, 100, 50);
             height: 350px;
         }
-        
+
             #admin .separateBox textarea {
                 width: 330px;
                 right: 20px;
@@ -527,8 +534,8 @@ div.pricingInner {
             width: 205px;
             margin: 5px 20px;
         }
-        #arrow p {
-            
+        #openChat p {
+
             text-align: center;
             font-size: 28px;
             font-weight: bold;
@@ -549,7 +556,7 @@ div.pricingInner {
         -webkit-transition:  -webkit-transform 2s;
         transition:  transform 2s;
     }
-    
+
     .separateBox .formAdmin {
         position: absolute;
         width: 100%;
@@ -562,4 +569,3 @@ div.pricingInner {
         top: 0px;
         z-index: 10;
     }
-

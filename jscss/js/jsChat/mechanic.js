@@ -5,7 +5,7 @@ $(document).ready(function () {
     var name = "Crows";
     var userID;
         if ($("#FirstName").val() != " "){
-            $("input[name='FirstName']").change(function(){ 
+            $("input[name='FirstName']").change(function(){
 
                 name = $("#FirstName").val() + "  " + $("input[name=SurName]").val();
                 console.log("Second: "+$("#FirstName").val());
@@ -13,7 +13,7 @@ $(document).ready(function () {
                 var userIDOne =  $("input[name=Email]").val() + "One";
                 $("#chat-wrap").attr('id', userIDOne);
                 $("#sendie").attr('id', userID);
-                
+
                 // display name on page
                 $("#name-area").html("You are: <span>" + name + "</span>");
 
@@ -22,168 +22,75 @@ $(document).ready(function () {
             name = "Crows";
         }
         console.log("First: "+$("#FirstName").val());
-//        // default name is 'Guest'
-//    	if (!name || name === ' ') {
-//    	   name = "Guest";	
-//    	}
-////    	
-////    });
-//    	// strip tags
-//    	name = name.replace(/(<([^>]+)>)/ig,"");
-    	
-    	
+
     	// kick off chat
         var userIDSend = '"#' + userID + '"';
         var chat =  new Chat();
-        //don't work because I changed ID of textarea manualy ("sendie")
     	$(function() {
-    	
-            $('textarea').click(function(){ 
+
+            $('textarea').click(function(){
 //    		 console.log(userIDSend);
         var idUser = this.id;
-    		 console.log("Before: " + this.id); 
-    		 console.log("BeforeA: " + idUser); 
-        
+    		 console.log("Before: " + this.id);
+    		 console.log("BeforeA: " + idUser);
+
     		 chat.getState();
     		 // watch textarea for key presses
-             $('"#' + this.id + '"').keydown(function(event) { 
-    		 console.log("Key down: " + this.id);  
-    		 console.log("Key downA: " + idUser);  
-             
-                 var key = event.which;  
-           
-                 //all keys including return.  
+             $('"#' + this.id + '"').keydown(function(event) {
+    		 console.log("Key down: " + this.id);
+    		 console.log("Key downA: " + idUser);
+
+                 var key = event.which;
+
+                 //all keys including return.
                  if (key >= 33) {
-                   
+
                      var maxLength = $(this).attr("maxlength");  
-                     var length = this.value.length;  
-                     
+                     var length = this.value.length;
+
                      // don't allow new content if length is maxed out
-                     if (length >= maxLength) {  
-                         event.preventDefault();  
-                     }  
-                  }  																																													});
+                     if (length >= maxLength) {
+                         event.preventDefault();
+                     }
+                  }
+                });
     		 // watch textarea for release of key press
-    		 $(this.id).keyup(function(e) {	
-    		 					 
-                    if (e.keyCode == 13) { 
+    		 $(this.id).keyup(function(e) {
+
+                    if (e.keyCode == 13) {
 
                         var text = $(this).val();
-                        var maxLength = $(this).attr("maxlength");  
-                        var length = text.length; 
+                        var maxLength = $(this).attr("maxlength");
+                        var length = text.length;
 
-                          // send 
-                          if (length <= maxLength + 1) { 
+                          // send
+                          if (length <= maxLength + 1) {
 
-                            chat.send(text, name);	
+                            chat.send(text, name);
                             $(this).val("");
                             chat.update();
 
                           } else {
                             $(this).val(text.substring(0, maxLength));
-                          }	
+                          }
                     }
              });
-            
+
     	});
     	});
-        
-        
-        
+
+
+
          setInterval(function(){
              chat.update();
          }, 1000);
 //     $(document).on("load", function(){
          console.log("work");
 //     });
-//    //If user wants to end session
-//	$("#exit").click(function(){
-//		var exit = confirm("Are you sure you want to end the session?");
-//		if(exit==true){window.location = 'index.php?logout=true';}		
-//	});
-//        
-//        //If user submits the form
-//	$("#submitmsg").click(function(){	
-//		var clientmsg = $("#usermsg").val();
-//		$.post("php/liveChatUserMsg.php", {text: clientmsg});				
-//		$("#usermsg").attr("value", "");
-//		return false;
-//	});
-//    
-//    //Load the file containing the chat log
-//	function loadLog(){	
-//		var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll	
-//    setInterval (loadLog, 2500);	//Reload file every 2500 ms or x ms if you wish to change the second parameter
-//
-//		$.ajax({
-//			url: "../pages/contactsLiveChat.php",
-//			cache: false,
-//			success: function(html){		
-//				$("#chatbox").html(html); //Insert chat log into the #chatbox div
-//                                
-//				//Auto-scroll			
-//				var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
-//				if(newscrollHeight > oldscrollHeight){
-//					$("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
-//				}
-//		  	},
-//		});
-//	}
-//    
 
-
-//        var lastTimeID = 0;
-//
-//    $(document).ready(function() {
-//      $('#btnSend').click( function() {
-//        sendChatText();
-//        $('#chatInput').val("");
-//      });
-//      startChat();
-//    });
-//
-//    function startChat(){
-//      setInterval( function() { getChatText(); }, 2000);
-//    }
-//
-//    function getChatText() {
-//      $.ajax({
-//        type: "GET",
-//        url: "/refresh.php?lastTimeID=" + lastTimeID
-//      }).done( function( data )
-//      {
-//        var jsonData = JSON.parse(data);
-//        var jsonLength = jsonData.results.length;
-//        var html = "";
-//        for (var i = 0; i < jsonLength; i++) {
-//          var result = jsonData.results[i];
-//          html += '<div style="color:#' + result.color + '">(' + result.chattime + ') <b>' + result.usrname +'</b>: ' + result.chattext + '</div>';
-//          lastTimeID = result.id;
-//        }
-//        $('#view_ajax').append(html);
-//      });
-//    }
-//
-//    function sendChatText(){
-//      var chatInput = $('#chatInput').val();
-//      if(chatInput != ""){
-//        $.ajax({
-//          type: "GET",
-//          url: "/submit.php?chattext=" + encodeURIComponent( chatInput )
-//        });
-//      }
-//    }
-    
-    
-    
-    
-    
-    ////
-    
         $(function() {
+
       //      console.log("setNewDate: " + setNewDate);
-
-
           $("#datepicker").datepicker({
                   changeMonth: true,
                   changeYear: true,
@@ -293,7 +200,7 @@ $(document).ready(function () {
                 var product_fields = $("#firstApply").serializeArray();
 
                 $.ajax({
-                    url: 'php/php.php',
+                    url: 'php/phpChat/php.php',
                     data: product_fields,
                     type: 'POST',
                     async: false,
@@ -310,7 +217,7 @@ $(document).ready(function () {
         event.preventDefault();
         $("#firstApply").submit();
     });
-    
+
     $("#chatForm").validate({
         submitHandler: function () {
 
@@ -318,13 +225,13 @@ $(document).ready(function () {
                 var product_fields = $("#chatForm").serializeArray();
 
                 $.ajax({
-                    url: 'php/chatPHP.php',
+                    url: 'php/phpChat/php.php',
 //                    url: 'php/process.php',
                     data: product_fields,
                     type: 'POST',
                     async: false,
                     success: function () {
-                        $("#chatForm").hide();
+                        $("#chatFormUser").hide();
                     }
                 });
             }, 2000);
@@ -337,4 +244,3 @@ $(document).ready(function () {
         $("#chatForm").submit();
     });
 });
-    
